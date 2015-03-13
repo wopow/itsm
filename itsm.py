@@ -2,6 +2,7 @@
 import xlrd
 import sys
 import os
+import dirname
 #解决编码问题
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
@@ -11,7 +12,12 @@ txtkey={  }
 def inblue( s ):
     return"%s[1;36;2m%s%s[0m"%(chr(27), s, chr(27))
 
-filename=os.listdir(sys.argv[1])
+rootdir=os.listdir(sys.argv[1])
+filename=dirname.getdir(rootdir)
+
+
+
+
 xlsfile=[]
 for i in filename:
     j=i[i.rfind('.'):]
